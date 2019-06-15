@@ -91,6 +91,9 @@
                         <li>
                             <a href="${base}/tags" nav="tags">标签</a>
                         </li>
+                    <@shiro.notAuthenticated>
+                         <li><a href="#" nav="tags">需要账号请在评论区留言</a></li>
+                    </@shiro.notAuthenticated>
                 </ul>
                 <ul class="navbar-button list-inline" id="header_user">
                     <li view="search" class="hidden-xs hidden-sm">
@@ -128,10 +131,8 @@
                         </ul>
                     </li>
 				<#else>
-                    <li><a href="${base}/login" class="btn btn-default btn-sm signup">登录</a></li>
-                    <@controls name="register">
-                        <li><a href="${base}/register" class="btn btn-primary btn-sm signup">注册</a></li>
-                    </@controls>
+                    <li><a href="${base}/login" class="btn btn-primary btn-sm signup">站长登录</a></li>
+
 				</#if>
 
                 </ul>
